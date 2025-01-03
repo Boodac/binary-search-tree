@@ -12,9 +12,7 @@ export default class Tree() {
 function mergeSort(array) {
     if(array.length <= 1) return array;
     let halfway = Math.floor(array.length / 2);
-    let firstHalf = array.slice(0,halfway);
-    let secondHalf = array.slice(halfway);
-    return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+    return merge(mergeSort(array.slice(0,halfway)), mergeSort(array.slice(halfway)));
 }
 
 function merge(left, right) {
